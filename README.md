@@ -85,13 +85,43 @@ make strip       # clear all notebook outputs (do this before committing)
 Notebooks write their scratch data (SSTable files, Parquet partitions, ...) under `~/tmp/sysdes-course/`,
 never into the repo.
 
+## The AI skill
+
+The course's method is also packaged as a portable **agent skill** at
+[`skills/system-design/`](skills/system-design/SKILL.md), usable by Claude Code and any
+harness that supports Agent Skills. It turns the curriculum into an operational planning
+procedure: requirements with numbers → back-of-envelope estimation → design with named
+guarantees and their costs → systematic failure analysis → evolution — plus decision
+tables, a failure-interrogation checklist, and the ML-systems discipline (leakage audits,
+serving modes, drift monitoring, retraining loops). It supports both designing new systems
+and reviewing existing architectures, and scales from "which database should I use?" to a
+full design document.
+
+**Install** (the skill directory is self-contained — copy or symlink it):
+
+```bash
+# for all your projects (Claude Code personal skills):
+cp -r skills/system-design ~/.claude/skills/
+
+# or for one project (shared with that project's collaborators via its repo):
+cp -r skills/system-design /path/to/project/.claude/skills/
+```
+
+Then invoke explicitly with `/system-design`, or just ask for a system design or an
+architecture review — the skill's description triggers it. Other harnesses/SDKs can load
+`SKILL.md` directly; the four files under `reference/` are fetched by the skill on demand.
+
+The skill is validated by `tests/test_skill.py` (frontmatter, reference integrity,
+portability), so it can't silently rot.
+
 ## Repository structure
 
 ```
-notebooks/    the course (4 parts, 26 notebooks)
-sysdes/       shared helpers: diagram drawing (viz) + discrete-event simulation (sim)
-tests/        unit tests for sysdes + an execution test for every notebook
-docs/         course design document (structure, conventions, dependency map)
+notebooks/        the course (4 parts, 26 notebooks)
+sysdes/           shared helpers: diagram drawing (viz) + discrete-event simulation (sim)
+tests/            unit tests for sysdes + skill validation + an execution test for every notebook
+docs/             course design document (structure, conventions, dependency map)
+skills/           the portable system-design planning skill for AI harnesses
 ```
 
 See [docs/course-design.md](docs/course-design.md) for the design of the course itself.

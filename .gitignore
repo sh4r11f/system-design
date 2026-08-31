@@ -17,3 +17,6 @@ dist/
 .vscode/
 .idea/
 .DS_Store
+
+# Claude Code local state (never committed; the shareable skill lives in skills/)
+.claude/
