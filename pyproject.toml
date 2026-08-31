@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sysdes"
+version = "0.1.0"
+description = "Shared helpers (diagrams + discrete-event simulation) for the system design crash course notebooks"
+requires-python = ">=3.12"
+
+[tool.setuptools]
+packages = ["sysdes"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+markers = [
+    # The notebook-execution tests are slow (they run every notebook end to end).
+    # Run only the fast unit tests with:  pytest -m "not notebooks"
+    "notebooks: executes full notebooks (slow)",
+]

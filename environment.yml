@@ -1,0 +1,23 @@
+name: sysdes
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  # numerics + data
+  - numpy
+  - pandas
+  - pyarrow
+  - scipy
+  - scikit-learn
+  # graphs + plots (all diagrams are generated with matplotlib)
+  - matplotlib
+  - networkx
+  # notebooks
+  - jupyterlab
+  - ipykernel
+  - nbformat
+  - nbclient
+  - jupytext
+  # testing
+  - pytest
