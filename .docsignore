@@ -1,9 +1,14 @@
 # Not documentation — kept out of the docs book.
 
-# The portable agent skill. These files are instructions written for an AI
-# harness (they carry skill frontmatter and are copied into ~/.claude/skills/),
-# not prose for a human reader. The README describes the skill for people.
-skills/**
+# The skill's entry file is instructions written for an AI harness: it carries
+# skill frontmatter, addresses the agent directly, and tells it which reference
+# file to load for which step. The README describes the skill for people.
+#
+# The four files under skills/system-design/reference/ are NOT excluded. They
+# are ordinary human reference — the latency ladder, the decision tables, the
+# failure interrogation, the ML discipline — and they go into the back of the
+# docs book unedited.
+skills/system-design/SKILL.md
 
 # Claude Code local state.
 .claude/**

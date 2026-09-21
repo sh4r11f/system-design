@@ -1,0 +1,6 @@
+% Passed to pandoc as --include-in-header when building docs/system-design-docs.pdf.
+% Without it the table of contents sets a two-digit number (4.10) flush against the
+% title it belongs to, because the report class reserves room for one digit only.
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{3.2em}
+\setlength{\cftsubsecnumwidth}{3.8em}
