@@ -1,8 +1,17 @@
 # Course Design
 
-This document is the high-level design of the course itself: what it optimizes for, how it is
-structured, the anatomy every notebook follows, and the engineering conventions that keep 26
-notebooks consistent and verifiable.
+This document explains why the course is shaped the way it is, and is for anyone adding a
+notebook or judging whether the course is worth taking. Four decisions explain almost
+everything about it: **every mechanism is built rather than described**; a notebook **shows
+the failure before it builds the fix**; every claim is an `assert` that **re-runs on every
+execution**, so the material cannot silently rot; and the **data-systems track comes before
+the ML track**, because the ML book assumes fluency the data book builds.
+
+The consequences are concrete. All 26 notebooks follow one template, in one order. All
+randomness is seeded. Nothing reaches the network. Each notebook runs end to end in under
+about 90 seconds, so the whole course is a test suite. The rest of this document gives the
+goals in full, the structure and dependency map, the notebook template, the shared `sysdes`
+package, and the conventions a new notebook must follow.
 
 ## Goals
 

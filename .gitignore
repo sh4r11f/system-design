@@ -20,3 +20,6 @@ dist/
 
 # Claude Code local state (never committed; the shareable skill lives in skills/)
 .claude/
+
+# Built documentation book (build output, rebuilt from the markdown)
+docs/*-docs.pdf

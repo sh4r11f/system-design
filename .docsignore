@@ -1,0 +1,13 @@
+# Not documentation — kept out of the docs book.
+
+# The portable agent skill. These files are instructions written for an AI
+# harness (they carry skill frontmatter and are copied into ~/.claude/skills/),
+# not prose for a human reader. The README describes the skill for people.
+skills/**
+
+# Claude Code local state.
+.claude/**
+CLAUDE.md
+
+# Build output.
+docs/*-docs.pdf
